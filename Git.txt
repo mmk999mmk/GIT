@@ -1,0 +1,44 @@
+sudo apt install git
+git config --global user.name "Manoj"
+git config --global user.email "mssrmkumar@gmail.com"                                                                                    
+git config --global color.ui auto
+git config -l
+git clone https://github.com/mmk999mmk/tutorial.git
+cd tutorial
+
+local to git push:
+
+mssrmkumar@cloudshell:~$ mkdir tutorial-2
+mssrmkumar@cloudshell:~$ cd tutorial-2
+mssrmkumar@cloudshell:~/tutorial-2$ git init
+Initialized empty Git repository in /home/mssrmkumar/tutorial-2/.git/
+mssrmkumar@cloudshell:~/tutorial-2$ ls -a
+.  ..  .git
+mssrmkumar@cloudshell:~/tutorial-2$ git remote -v
+create a folder in git with name tutorial-2
+mssrmkumar@cloudshell:~/tutorial-2$ git remote add origin https://github.com/mmk999mmk/tutorial-2.git
+mssrmkumar@cloudshell:~/tutorial-2$ git remote -v
+origin  https://github.com/mmk999mmk/tutorial-2.git (fetch)
+origin  https://github.com/mmk999mmk/tutorial-2.git (push)
+
+git day-2:
+
+cd tutorial
+touch bob.txt
+touch alice.txt
+git status -- untracked files
+git add alice.txt -- for adding the file for tracking now it will track and adding it to staging area.
+git diff -- to see the differences b/w previous and latest file.
+git commit -m "adding a alice file and commiting it" -- will be used to commit a file and "" we can write a useful msg in this str
+
+git log -- to see the commit logs
+
+git diff --staged        -- to see the changes going into the previous versions.
+
+upto here we do the changes in our local repository now going to push them to main cloud repository.
+
+git push -u origin master -- pushes data from local to remote
+
+when we do changes in the remote repository and needs that change in local system we need to reun the below command:
+
+git pull origin master -- pulls the data from rempter repository
